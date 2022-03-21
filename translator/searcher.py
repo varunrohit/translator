@@ -1,4 +1,4 @@
-# from . import trie
+from . import trie
 import pandas
 
 from pandas import *
@@ -29,3 +29,13 @@ def translate(word):
     syn_word = syn[binarys(word)]
     resp = {"eng": word,"tam": tam_word, "pron": pron_word, "syn": syn_word}
     return resp
+
+
+ft = trie.Trie()
+for word in eng:
+  if(word.isalpha()):           #check if all alphabets.
+    ft.insert(word.lower(), eng.index(word))    #insert lowercase word, along with index in array
+
+
+def triesearch(word):
+    return ft.search(word)
