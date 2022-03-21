@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>GFG</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="wor" required>
+    <br>
+    <button type="submit">Translate</button>
+</form>
+</body>
+</html> -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/hello.css' %}" >
+</head>
+
+<div className="App">
+      <h1>Free Dictionary</h1>
+      <div className="searchBox">
+	<form method="post">
+		{% csrf_token %}
+      		<input
+          		type="text"
+			name="wor"
+          		placeholder="Search..."
+			required
+        	/>
+      		<button
+          		type="submit"
+       		>
+      			<FaSearch size="120px" />
+      		</button>
+	</form>
+      </div>
+      <div className="showResults">
+	<h2>
+            
+            <button
+              
+            >
+              <FcSpeaker size="126px" />
+            </button>
+         </h2>
+	 <h4>English : {{eng}}</h4>
+	 <h4>Tamil : {{tam}}</h4>
+	 <h4>Pronunciation : {{pron}}</h4>
+	 <h4>Synonyms : {{syn}}</h4>
+	</div>
+</div>
