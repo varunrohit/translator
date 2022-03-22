@@ -32,13 +32,11 @@ def translate(word):
 
 
 ft = trie.Trie()
-for word in eng:
-  if(word.isalpha()):           #check if all alphabets.
-    ft.insert(word.lower(), eng.index(word))    #insert lowercase word, along with index in array
+# for word in eng:
+#   if(word.isalpha()):           #check if all alphabets.
+#     ft.insert(word.lower(), eng.index(word))    #insert lowercase word, along with index in array
 
-
-def triesearch(word):
-    return ft.search(word)
+ft.formTrie(eng)
 
 
 

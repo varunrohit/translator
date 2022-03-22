@@ -23,5 +23,5 @@ class recommend(views.APIView):
         return render(request, "top.html")
     def post(self, request):
         pref = request.data["wor"]
-        resp = searcher.ft.printAutoSuggestions(pref)
+        resp = searcher.ft.getAutoSuggestions(pref)
         return HttpResponse(resp)
