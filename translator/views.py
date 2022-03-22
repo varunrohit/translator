@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework import views
 
@@ -16,3 +17,11 @@ class wordView(views.APIView):
         # return Response(op)
         temp = {"eng": op["eng"], "tam":op["tam"], "pron":op["pron"], "syn":op["syn"]}
         return render(request, "top.html", temp)
+
+class recommend(views.APIView):
+    def get(self, request):
+        return render(request, "top.html")
+    def post(self, request):
+        pref = request.data["wor"]
+        resp = searcher.ft.printAutoSuggestions(pref)
+        return HttpResponse(resp)

@@ -39,3 +39,7 @@ for word in eng:
 
 def triesearch(word):
     return ft.search(word)
+
+
+
+#   min(timeit.repeat(get_set_delete_fn(slotted))) --> to time fun ctions
