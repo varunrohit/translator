@@ -3,5 +3,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.wordView.as_view())
+    path('', views.wordView.as_view()),
+    path('trie/', views.recommend.as_view()),
 ]
