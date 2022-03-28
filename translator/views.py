@@ -5,6 +5,8 @@ from rest_framework import views
 from .serializers import WordSerializer
 from . import searcher
 
+import json
+
 # Create your views here.
 
 class wordView(views.APIView):
@@ -23,5 +25,5 @@ class recommend(views.APIView):
         return render(request, "top.html")
     def post(self, request):
         pref = request.data["wor"]
-        resp = searcher.ft.getAutoSuggestions(pref)
+        resp = json.dumps(searcher.ft.getAutoSuggestions(pref))
         return HttpResponse(resp)
