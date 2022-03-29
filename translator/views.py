@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from rest_framework import views
 
@@ -18,7 +18,8 @@ class wordView(views.APIView):
         op = WordSerializer(resp).data
         # return Response(op)
         temp = {"eng": op["eng"], "tam":op["tam"], "pron":op["pron"], "syn":op["syn"]}
-        return render(request, "top.html", temp)
+        # return render(request, "top.html", temp)
+        return JsonResponse(temp)
 
 class recommend(views.APIView):
     def get(self, request):
