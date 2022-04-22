@@ -3,7 +3,7 @@ import pandas
 
 from pandas import *
 
-dat=read_csv("translator\output.csv")
+dat=read_csv("translator/output.csv")
 
 eng = dat["eng"].tolist()
 tam = dat["tamil"].tolist()
