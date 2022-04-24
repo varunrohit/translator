@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: rbmt",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}\\translator\\rbmt.py",
+            "justMyCode": true
+        },
+        {
             "name": "Python: Django",
             "type": "python",
             "request": "launch",

@@ -8,6 +8,8 @@ django = "*"
 djangorestframework = "*"
 pandas = "*"
 django-cors-headers = "*"
+nltk = "*"
+sklearn = "*"
 
 [dev-packages]
 

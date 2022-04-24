@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework import views
 
 from .serializers import WordSerializer
-from . import searcher
+from . import searcher, rbmt
 
 import json
 
@@ -28,3 +28,12 @@ class recommend(views.APIView):
         pref = request.data["wor"]
         resp = json.dumps(searcher.ft.getAutoSuggestions(pref))
         return HttpResponse(resp)
+
+class sentenceTrans(views.APIView):
+    def get(self, request):
+        return render(request, "top.html")
+    def post(self, request):
+        sent = request.data["wor"]
+        ret = json.dumps(rbmt.transent(sent))
+        return HttpResponse(ret)
+        
