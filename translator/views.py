@@ -34,6 +34,6 @@ class sentenceTrans(views.APIView):
         return render(request, "top.html")
     def post(self, request):
         sent = request.data["wor"]
-        ret = json.dumps(rbmt.transent(sent))
+        ret = json.dumps(rbmt.transent(sent), ensure_ascii=False)
         return HttpResponse(ret)
         
