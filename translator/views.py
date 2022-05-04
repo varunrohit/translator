@@ -13,7 +13,7 @@ class wordView(views.APIView):
     def get(self, request):
         return render(request, "top.html")
     def post(self, request):
-        wor = request.data["wor"]
+        wor = request.data["wor"].lower()
         resp = searcher.translate(wor)
         op = WordSerializer(resp).data
         # return Response(op)
@@ -34,6 +34,7 @@ class sentenceTrans(views.APIView):
         return render(request, "top.html")
     def post(self, request):
         sent = request.data["wor"]
+        print(sent)
         ret = json.dumps(rbmt.transent(sent), ensure_ascii=False)
         return HttpResponse(ret)
         

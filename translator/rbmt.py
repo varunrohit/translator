@@ -309,7 +309,7 @@ def transent(sample):
   *   whQuestion Words like **what, when, where, who, whom, which, whose, why and how**
   """
 
-  ret = {'tam':'', 'pron':''}
+  ret = {'eng': sample, 'tam':'', 'pron':''}
 
   if(y=='whQuestion'):
     # for i in root_words:
